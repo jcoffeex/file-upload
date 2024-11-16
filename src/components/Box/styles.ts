@@ -15,6 +15,10 @@ const Box = styled.div`
     flex-direction: column;
 
     border-radius: 12px;
+
+    @media (max-width: 768px){
+        width: 100%;
+    }
 `;
 
 export {
