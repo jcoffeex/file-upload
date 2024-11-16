@@ -1,9 +1,6 @@
+import { Box } from "./components";
 function App() {
-  return (
-    <>
-      <h1>Coffee</h1>
-    </>
-  );
+  return <Box />;
 }
 
 export default App;
