@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.7",
+    "ts-node": "^10.9.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/multer": "^1.4.12",
+    "@types/node": "^22.9.0",
+    "typescript": "^5.6.3"
+  },
+  "scripts": {
+    "nodemon": "nodemon index.ts",
+    "tsc": "npx tsc --watch"
+  }
+}

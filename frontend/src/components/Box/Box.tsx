@@ -6,7 +6,6 @@ export default function Box() {
   const { file } = useFileContext();
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    alert("hle");
     if (!file) {
       console.log("Nenhum arquivo");
       return;
