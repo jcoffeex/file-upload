@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   server:
+    container_name: upload_file_server
     build:
       context: ./server
       dockerfile: Dockerfile
@@ -13,6 +14,7 @@ services:
     command: yarn nodemon
 
   frontend:
+    container_name: upload_file_frontend
     build:
       context: ./frontend
       dockerfile: Dockerfile
