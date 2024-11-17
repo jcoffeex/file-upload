@@ -26,7 +26,7 @@ cd file-upload
 2. Construir e iniciar o contêiner com Docker Compose:
 
 ```
-   docker-compose up --build
+docker-compose up --build
 ```
 
 3. Iniciar o contêiner em modo normal (caso já tenha feito o build anteriormente):
