@@ -11,6 +11,8 @@ const Label = styled.label`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    cursor: pointer;
 `;
 
 const InputFile = styled.input`

@@ -2,7 +2,7 @@ import multer from 'multer';
 import { IncomingMessage, ServerResponse } from 'http';
 import fs from 'fs/promises'; 
 import path from 'path';
-import  uploadFile  from './supabase.ts'; 
+import uploadFile from './supabase.'; 
 
 interface MulterRequest extends IncomingMessage {
   file?: Express.Multer.File;

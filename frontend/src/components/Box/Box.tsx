@@ -3,7 +3,7 @@ import { InputFile } from "../";
 import { useFileContext } from "../../hook/useFileContext";
 import { request } from "../../services/api";
 export default function Box() {
-  const { file } = useFileContext();
+  const { file, fileUrl, setFileUrl } = useFileContext();
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     if (!file) {
@@ -13,7 +13,7 @@ export default function Box() {
     try {
       if (file) {
         const response = await request.endFile(file);
-        console.log("Resposta do servidor:", response.data);
+        setFileUrl(response.data.fileUrl);
       }
     } catch (error) {
       console.error("error:", error);
@@ -24,8 +24,13 @@ export default function Box() {
       <h1>Upload de arquivos</h1>
       <C.Form onSubmit={handleSubmit}>
         <InputFile />
-        <button type="submit">Enviar</button>
+        <C.Button type="submit">Enviar</C.Button>
       </C.Form>
+      {fileUrl && (
+        <a href={fileUrl} target="_blank" rel="noopener noreferrer">
+          Url do arquivo
+        </a>
+      )}
     </C.Box>
   );
 }

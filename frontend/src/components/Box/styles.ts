@@ -19,10 +19,27 @@ const Box = styled.div`
 `;
 
 const Form = styled.form`
+  margin-top: 4px;
+  margin-bottom: 8px;
+
   height: 100%;
   width: 100%;
+
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: 14px
 `;
 
-export { Box, Form};
+const Button = styled.button`
+  border: none;
+  border-radius: 12px;
+ 
+  width: 150px;
+
+  padding: 1rem;
+
+  cursor: pointer;
+`
+export { Box, Form, Button};
