@@ -1,6 +1,7 @@
 # File Upload Project
 
 Um sistema simples de upload de arquivos.
+<img src="screenshot.png" alt="Imagem do projeto" width="50%"/>
 
 ## Pré-requisitos
 
@@ -34,3 +35,7 @@ docker-compose up --build
 ```
 docker-compose up
 ```
+
+## Vídeo
+
+<a href='https://fqvdbgearwiwcebrpbop.supabase.co/storage/v1/object/public/file/demonstration.mp4'>Link do vídeo<a/>
