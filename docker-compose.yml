@@ -1,13 +1,25 @@
 version: '3.8'
 services:
-  app:
+  server:
     build:
       context: ./server
       dockerfile: Dockerfile
     ports:
       - "3000:3000" 
     volumes:
-      - ./server:/usr/src/app 
+      - ./server:/usr/src/app
     environment:
       NODE_ENV: development 
     command: yarn nodemon
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173" 
+    volumes:
+      - ./frontend:/usr/src/app
+    environment:
+      NODE_ENV: development
+    command: yarn dev --host

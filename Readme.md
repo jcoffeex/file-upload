@@ -23,24 +23,14 @@ git clone https://github.com/jcoffeex/file-upload.git
 cd file-upload
 ```
 
-## Server
-
-1. Construir e iniciar o contêiner com Docker Compose:
+2. Construir e iniciar o contêiner com Docker Compose:
 
 ```
    docker-compose up --build
 ```
 
-2. Iniciar o contêiner em modo normal (caso já tenha feito o build anteriormente):
+3. Iniciar o contêiner em modo normal (caso já tenha feito o build anteriormente):
 
 ```
 docker-compose up
-```
-
-## Front-End:
-
-```
-cd frontend
-yarn
-yarn dev
 ```
