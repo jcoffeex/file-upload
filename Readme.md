@@ -1,6 +1,7 @@
 # File Upload Project
 
 Um sistema simples de upload de arquivos.
+
 <img src="screenshot.png" alt="Imagem do projeto" width="50%"/>
 
 ## Pré-requisitos
