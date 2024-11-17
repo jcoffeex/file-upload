@@ -1,5 +1,5 @@
 import http from 'http';
-import { uploadRoute, filesRoute } from '../routes';
+import { uploadRoute } from '../routes';
 import cors from 'cors';
 const port = 3000;
 const server = http.createServer((req, res) => {
@@ -12,8 +12,6 @@ const server = http.createServer((req, res) => {
   cors(corsOptions)(req, res, () => {
     if (req.url === '/upload') {
       uploadRoute(req, res);
-    } else if (req.url === '/files') {
-      filesRoute(req, res);
     } else {
       res.statusCode = 404;
       res.end('Rota não encontrada');
