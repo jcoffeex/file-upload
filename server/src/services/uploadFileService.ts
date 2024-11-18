@@ -38,7 +38,7 @@ const uploadFileService = async (req: MulterRequest, res: ServerResponse) => {
         throw new Error('Erro ao gerar URL pública do arquivo');
       }
 
-      res.statusCode = 200;
+      res.statusCode = 201;
       res.end(JSON.stringify({
         message: 'Arquivo enviado com sucesso!',
         fileUrl: publicUrl,
