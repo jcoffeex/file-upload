@@ -1,9 +1,9 @@
 import * as C from "./styles";
-import { InputFile } from "../";
+import { InputFile, File } from "../";
 import { useFileContext } from "../../hook/useFileContext";
 import { request } from "../../services/api";
 export default function Box() {
-  const { file, fileUrl, setFileUrl } = useFileContext();
+  const { file, fileProps, setFileProps } = useFileContext();
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     if (!file) {
@@ -13,7 +13,12 @@ export default function Box() {
     try {
       if (file) {
         const response = await request.endFile(file);
-        setFileUrl(response.data.fileUrl);
+        setFileProps((prevState) => ({
+          ...prevState,
+          fileName: response.data.fileName,
+          size: response.data.fileSize,
+          url: response.data.fileUrl,
+        }));
       }
     } catch (error) {
       console.error("error:", error);
@@ -26,10 +31,10 @@ export default function Box() {
         <InputFile />
         <C.Button type="submit">Enviar</C.Button>
       </C.Form>
-      {fileUrl && (
-        <a href={fileUrl} target="_blank" rel="noopener noreferrer">
-          Url do arquivo
-        </a>
+      {fileProps.fileName && fileProps.size && fileProps.url ? (
+        <File />
+      ) : (
+        <span>Sem arquivo</span>
       )}
     </C.Box>
   );

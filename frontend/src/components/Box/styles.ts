@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { ButtonBase } from "../../styles/base";
 const Box = styled.div`
   width: 500px;
   padding-top: 12px;
@@ -9,9 +9,12 @@ const Box = styled.div`
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 8px 24px rgba(0, 0, 0, 0.05);
 
   margin: 4rem auto;
-  text-align: center;
 
   border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -32,14 +35,5 @@ const Form = styled.form`
   gap: 14px
 `;
 
-const Button = styled.button`
-  border: none;
-  border-radius: 12px;
- 
-  width: 150px;
-
-  padding: 1rem;
-
-  cursor: pointer;
-`
+const Button = styled(ButtonBase)``
 export { Box, Form, Button};

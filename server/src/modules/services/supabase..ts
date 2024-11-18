@@ -10,7 +10,7 @@ if (!SUPABASE_URL || !SUPABASE_KEY) {
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
-export default async function uploadFile(bucket: string, file: File | Blob, fileName: string): Promise<string | null> {
+export default async function uploadFile(bucket: string, file: File | Buffer, fileName: string): Promise<string | null> {
   const { data, error } = await supabase.storage
     .from(bucket)
     .upload(fileName, file, {

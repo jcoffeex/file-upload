@@ -1,14 +1,13 @@
 import multer from 'multer';
 import { IncomingMessage, ServerResponse } from 'http';
-import fs from 'fs/promises'; 
-import path from 'path';
 import uploadFile from './supabase.'; 
 
 interface MulterRequest extends IncomingMessage {
   file?: Express.Multer.File;
 }
 
-const upload = multer({ dest: 'uploads/' });
+const upload = multer();
+
 const handleUpload: any = upload.single('file');
 
 const bucketName = 'file'; 
@@ -21,19 +20,18 @@ const uploadFileService = async (req: MulterRequest, res: ServerResponse) => {
     }
 
     const file = req.file;
+    
     if (!file) {
       res.statusCode = 400;
       return res.end(JSON.stringify({ error: 'Nenhum arquivo enviado!' }));
     }
 
     try {
-      const filePath = path.resolve(file.path);
-      const fileBuffer = await fs.readFile(filePath);
 
-      const blob = new Blob([fileBuffer], { type: file.mimetype });
+      const publicUrl = await uploadFile(bucketName, file.buffer, file.originalname);
 
-      const publicUrl = await uploadFile(bucketName, blob, file.filename);
-
+      const fileName = file.originalname;
+      const fileSize = file.size;
       if (!publicUrl) {
         throw new Error('Erro ao gerar URL pública do arquivo');
       }
@@ -41,6 +39,8 @@ const uploadFileService = async (req: MulterRequest, res: ServerResponse) => {
       res.statusCode = 201;
       res.end(JSON.stringify({
         message: 'Arquivo enviado com sucesso!',
+        fileName: fileName,
+        fileSize: fileSize,
         fileUrl: publicUrl,
       }));
       

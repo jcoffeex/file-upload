@@ -6,7 +6,6 @@ export const request = {
     endFile: async (file: File) => {
         const formData = new FormData();
         formData.append('file', file);
-
         try {
             const response = await axios.post(apiUrl, formData, {
                 headers: {
