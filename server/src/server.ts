@@ -1,5 +1,5 @@
 import http from 'http';
-import { uploadRoute } from './src/modules/routes';
+import { uploadRoute } from './modules/routes';
 import cors from 'cors';
 const port = 3000;
 const server = http.createServer((req, res) => {

@@ -14,7 +14,7 @@
     "typescript": "^5.6.3"
   },
   "scripts": {
-    "nodemon": "nodemon server.ts",
+    "nodemon": "nodemon src/server.ts",
     "tsc": "npx tsc --watch"
   }
 }
