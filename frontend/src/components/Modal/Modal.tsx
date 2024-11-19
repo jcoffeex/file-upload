@@ -61,7 +61,12 @@ export default function Modal() {
     <C.Modal>
       <C.Content>
         <img
-          style={{ cursor: "pointer", position: "absolute", top: 8, right: 8 }}
+          style={{
+            cursor: "pointer",
+            position: "absolute",
+            top: 12,
+            right: 12,
+          }}
           onClick={handleModal}
           src={closeIcon}
           alt="Close icon"

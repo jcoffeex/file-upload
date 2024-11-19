@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ButtonBase } from "../../styles/base";
-
+import colors from "../../styles/colors";
 const Modal = styled.div`
     position: fixed; 
     left: 0;
@@ -17,7 +17,7 @@ const Modal = styled.div`
     align-items: center;
 `
 const Content = styled.div`
-    background-color: #fefefe;
+    background-color: ${colors["white-01"]};
     
     padding: 20px;
 
@@ -31,8 +31,10 @@ const Content = styled.div`
     position: relative;
    `
 const Button = styled(ButtonBase)`
+    margin-top: 10px;
     &:hover{
-        background-color: green;
+        background-color: ${colors["blue-01"]};
+        color: ${colors["white-01"]}
     }
 `
 export {

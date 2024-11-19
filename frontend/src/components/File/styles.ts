@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { ButtonBase } from "../../styles/base";
+import colors from "../../styles/colors";
 const File = styled.div`
-    background-color: #E9F0FF;
+    background-color: ${colors["blue-02"]};
     
     width: 80%;
     height: 60px;
@@ -20,7 +21,7 @@ const Button = styled(ButtonBase)`
     width: 100px;
     
     &:hover{
-        background-color: rgb(246, 246, 246);
+        background-color: ${colors["white-02"]};
     }
 `
 

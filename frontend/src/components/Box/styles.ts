@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ButtonBase } from "../../styles/base";
+import colors from "../../styles/colors";
 const Box = styled.div`
   width: 500px;
   padding-top: 12px;
@@ -35,5 +36,12 @@ const Form = styled.form`
   gap: 14px
 `;
 
-const Button = styled(ButtonBase)``
+interface ButtonProps {
+  isActive: boolean; 
+}
+
+const Button = styled(ButtonBase)<ButtonProps>`
+background-color: ${props => (props.isActive ? colors["blue-01"] : '')};
+color:  ${props => (props.isActive ? colors["white-01"] : '')};
+`
 export { Box, Form, Button};

@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 const apiUrl = 'http://localhost:3000/upload';
 
 export const request = {
@@ -12,6 +11,7 @@ export const request = {
                     'Content-Type': 'multipart/form-data',
                 },
             });
+
             return response; 
         } catch (error) {
             console.error('Erro ao enviar o arquivo:', error);

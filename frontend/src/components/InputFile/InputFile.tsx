@@ -2,11 +2,14 @@ import * as C from "./styles";
 import imageUpload from "../../assets/images/upload.png";
 import { useFileContext } from "../../hook/useFileContext";
 export default function InputFile() {
-  const { setFile } = useFileContext();
+  const { setFile, setCheckFile } = useFileContext();
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = event.target.files?.[0];
     if (selectedFile) {
       setFile(selectedFile);
+      setCheckFile(true);
+    } else {
+      setCheckFile(false);
     }
   };
 
