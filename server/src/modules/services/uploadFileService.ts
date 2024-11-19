@@ -29,9 +29,9 @@ const uploadFileService = async (req: MulterRequest, res: ServerResponse) => {
     try {
 
       const publicUrl = await uploadFile(bucketName, file.buffer, file.originalname);
-
       const fileName = file.originalname;
       const fileSize = file.size;
+      const fileType = file.mimetype;
       if (!publicUrl) {
         throw new Error('Erro ao gerar URL pública do arquivo');
       }
@@ -42,6 +42,7 @@ const uploadFileService = async (req: MulterRequest, res: ServerResponse) => {
         fileName: fileName,
         fileSize: fileSize,
         fileUrl: publicUrl,
+        fileType: fileType,
       }));
       
     } catch (uploadError) {

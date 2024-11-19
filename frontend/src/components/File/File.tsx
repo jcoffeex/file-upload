@@ -1,9 +1,11 @@
 import * as C from "./styles";
 import fileIcon from "../../assets/icons/file.png";
 import { useFileContext } from "../../hook/useFileContext";
+import { Modal } from "../index";
 
 export default function File() {
-  const { fileProps } = useFileContext();
+  const { fileProps, modal, handleModal } = useFileContext();
+
   return (
     <C.File>
       <div style={{ display: "flex" }}>
@@ -13,7 +15,8 @@ export default function File() {
           <span style={{ display: "block" }}>{fileProps.size}</span>
         </div>
       </div>
-      <C.Button>Visualizar</C.Button>
+      <C.Button onClick={handleModal}>Visualizar</C.Button>
+      {modal && <Modal />}
     </C.File>
   );
 }

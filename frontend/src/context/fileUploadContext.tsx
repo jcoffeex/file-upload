@@ -8,31 +8,45 @@ type FileProps = {
   fileName: string;
   size: string;
   url: string;
+  fileType: string;
 };
 
 type ContextType = {
   file: File | null;
-  fileUrl: string;
   fileProps: FileProps;
+  modal: boolean;
+  handleModal: () => void;
+  setModal: Dispatch<SetStateAction<boolean>>;
   setFileProps: Dispatch<SetStateAction<FileProps>>;
   setFile: Dispatch<SetStateAction<File | null>>;
-  setFileUrl: Dispatch<SetStateAction<string>>;
 };
 
 export const Context = createContext({} as ContextType);
 
 export default function Provider({ children }: ProviderProps) {
   const [file, setFile] = useState<File | null>(null);
-  const [fileUrl, setFileUrl] = useState<string>("");
-
+  const [modal, setModal] = useState(false);
   const [fileProps, setFileProps] = useState<FileProps>({
     fileName: "",
     size: "",
     url: "",
+    fileType: "",
   });
+  const handleModal = () => {
+    setModal(!modal);
+  };
+
   return (
     <Context.Provider
-      value={{ file, fileUrl, fileProps, setFileProps, setFile, setFileUrl }}
+      value={{
+        file,
+        fileProps,
+        modal,
+        handleModal,
+        setModal,
+        setFileProps,
+        setFile,
+      }}
     >
       {children}
     </Context.Provider>

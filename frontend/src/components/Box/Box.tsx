@@ -2,6 +2,7 @@ import * as C from "./styles";
 import { InputFile, File } from "../";
 import { useFileContext } from "../../hook/useFileContext";
 import { request } from "../../services/api";
+
 export default function Box() {
   const { file, fileProps, setFileProps } = useFileContext();
   const handleSubmit = async (event: React.FormEvent) => {
@@ -18,6 +19,7 @@ export default function Box() {
           fileName: response.data.fileName,
           size: response.data.fileSize,
           url: response.data.fileUrl,
+          fileType: response.data.fileType,
         }));
       }
     } catch (error) {

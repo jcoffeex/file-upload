@@ -7,7 +7,6 @@ export default function InputFile() {
     const selectedFile = event.target.files?.[0];
     if (selectedFile) {
       setFile(selectedFile);
-      console.log(selectedFile);
     }
   };
 
