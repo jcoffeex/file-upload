@@ -2,7 +2,7 @@
 
 Um sistema simples de upload de arquivos.
 
-<img src="screenshot.png" alt="Imagem do projeto" width="50%"/>
+<img src="screenshot.png" alt="Imagem do projeto" width="100%"/>
 
 ## Pré-requisitos
 
