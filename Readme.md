@@ -1,6 +1,6 @@
 # File Upload Project
 
-Um sistema simples de upload de arquivos.
+O objetivo deste projeto foi compreender o fluxo de um sistema de upload, incluindo o armazenamento de arquivos em uma cloud. Para isso, utilizei React no frontend e Node.js puro no backend.
 
 <img src="screenshot.png" alt="Imagem do projeto" width="100%"/>
 
